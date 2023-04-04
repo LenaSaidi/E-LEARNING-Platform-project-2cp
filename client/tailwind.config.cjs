@@ -15,12 +15,8 @@ module.exports = {
       black: "hsla(0, 0%, 0%, 1)",
       white: "white",
       assignmentbg:"hsla(210, 44%, 94%, 1)", 
-      primary1: "#E8EFF6",
       black:"hsla(0, 0%, 0%, 1)",
-      ered:"#DA2F43",
-      bblue:"#5271FF",
-      b2blue:"#37C6FF",
-      ...colors
+      red:"#DA2F43",
     },
   },
   plugins:[], 

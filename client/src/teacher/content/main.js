@@ -58,4 +58,10 @@ export const announcement = [
       "Lorem ipsum dolor sit amet consectetur. Elit quisque diam diam amet ultricies at. Auctor aenean tellus pulvinar volutpat vestibulum orci tincidunt est.",
     image: imageholder,
   },
+  {
+    profilepicture: profile,
+    person: "said",
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Elit quisque diam diam amet ultricies at. Auctor aenean tellus pulvinar volutpat vestibulum orci tincidunt est.",
+  },
 ];

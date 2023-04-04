@@ -68,17 +68,17 @@
 
 /* Signin page*/
 .form-input {
-  @apply flex justify-between items-center bg-white py-2 px-2 rounded-md border align-middle mt-1 shadow border-gray-300;
+  @apply flex justify-between bg-white py-3.5 px-2 rounded-md border mt-1 shadow border-darkgray;
 }
 
 .form-input-error {
-  @apply flex justify-between items-center bg-white py-2 px-2 rounded-md border align-middle mt-1 shadow border-red-500;
+  @apply flex justify-between bg-white py-3.5 px-2 rounded-md border mt-1 shadow border-red;
 }
 
 .select-input {
-  @apply flex justify-between items-center bg-white h-full w-full rounded-md border align-middle mt-1 shadow border-gray-300;
+  @apply flex justify-between bg-white h-full w-full rounded-md border mt-1 shadow border-darkgray;
 }
 
 .select-input-error {
-  @apply flex justify-between items-center bg-white h-2 w-2 rounded-md border align-middle mt-1 shadow border-red-500;
+  @apply flex justify-between bg-white h-2 w-2 rounded-md border mt-1 shadow border-red;
 }
