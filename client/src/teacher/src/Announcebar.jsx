@@ -4,20 +4,35 @@ import Profile from "../../components/Profile";
 import { notificaiton } from "../content/notification";
 import Notificationbill from "../../components/Notificationbill";
 import speaker from "../../assets/icons/announcemet.svg";
+import Announcementelement from "../../components/Announcementelement";
+import { useState } from "react";
 
-const Announcebar = ({ activeCard }) => {
+const Announcebar = ({ barContent, setBarContent }) => {
+  const user = 'said'
   return (
     <div className="sticky right-0 top-0 flex max-h-[100vh] basis-[20%] flex-col gap-4 bg-white p-4">
       <div className="flex  justify-between ">
         <Notificationbill isnotification={notificaiton} />
         <Profile profilepicture={profile} person={"said nouasria"} order={3} />
       </div>
-      {activeCard ? null : (
+      {barContent === null ? (
         <div className=" m-auto">
           <img src={speaker} />
           <p className=" text-md mt-2 text-center font-semibold text-gray ">
             Select an announcement ...
           </p>
+        </div>
+      ) : (
+        <div className="mx-auto">
+          <Announcementelement
+            self={user === barContent.person}
+            profilepicture={barContent.profilepicture}
+            person={barContent.person}
+            content={barContent.content}
+            image={barContent.image}
+            isDisplayed={true}
+            setBarContent={setBarContent}
+          />
         </div>
       )}
     </div>

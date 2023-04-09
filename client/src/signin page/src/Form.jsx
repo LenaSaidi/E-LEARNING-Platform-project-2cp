@@ -87,11 +87,12 @@ const Form = () => {
 
       <div className="flex flex-col w-90 text-sm mt-10 items-center">
         <div className="flex flex-col mb-6 w-full">
-          <label>Email</label>
+          <label htmlFor="email" className="pb-1">Email</label>
           <div
             className={validInputs.email ? "form-input" : "form-input-error"}
           >
             <input
+              id="email"
               placeholder="Elitesstudent@gmail.com"
               className=" w-full pr-1 outline-none placeholder-gray"
               type="text"
@@ -111,11 +112,12 @@ const Form = () => {
         </div>
 
         <div className="flex flex-col mb-6 w-full">
-          <label>Password</label>
+          <label htmlFor="password" className="pb-1">Password</label>
           <div
             className={validInputs.password ? "form-input" : "form-input-error"}
           >
             <input
+              id="password"
               placeholder="Enter your password"
               type="password"
               name="password"
@@ -129,7 +131,7 @@ const Form = () => {
         </div>
 
         <div className="flex flex-col mb-6 w-full">
-          <label>Sign in as</label>
+          <label className="pb-1">Sign in as</label>
           <div
             className={
               validInputs.user
@@ -158,8 +160,8 @@ const Form = () => {
             <ul
               className={
                 isShown
-                  ? "cursor-pointer px-0 bg-white rounded-sm absolute z-10 w-full visible"
-                  : "hidden"
+                  ? "cursor-pointer px-0 bg-white rounded-sm absolute z-10 w-full opacity-100"
+                  : "hidden opacity-0"
               }
             >
               <li
@@ -187,7 +189,7 @@ const Form = () => {
 
         <button
           type="submit"
-          className=" bg-blue hover:bg-blue hover:shadow-inner font-semibold text-white px-2 py-2.5 rounded-md mt-6 w-72"
+          className=" bg-accent hover:shadow-inner font-semibold text-white px-2 py-2.5 rounded-md mt-6 w-72"
         >
           Sign in
         </button>

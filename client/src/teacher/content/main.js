@@ -65,3 +65,10 @@ export const announcement = [
       "Lorem ipsum dolor sit amet consectetur. Elit quisque diam diam amet ultricies at. Auctor aenean tellus pulvinar volutpat vestibulum orci tincidunt est.",
   },
 ];
+
+export const students = [
+  { person: "Imed B", group: "2CP", profilepicture: profile },
+  { person: "Imed Bou", group: "2CP", profilepicture: profile },
+  { person: "Imed Bousak", group: "2CP", profilepicture: profile },
+  { person: "Imed Bousakhria", group: "2CP", profilepicture: profile },
+];

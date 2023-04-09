@@ -8,10 +8,18 @@ import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper-bundle.css";
 import "swiper/css";
 import "swiper/css/navigation";
+import { useContext } from "react";
+import { AnnouncementContext } from "../teacher/Teacherannounce";
 
-const Allannouncements = ({ items }) => {
-  const [activeCardIndex, setActiveCardIndex] = useState();
-
+const Allannouncements = ({
+  items,
+  setBarContent,
+  activeCardIndex,
+  setActiveCardIndex,
+  barContent,
+}) => {
+  const { setContentToEdit, editMode } = useContext(AnnouncementContext);
+  const user = "said";
   const splitIntoFours = (array) => {
     const result = [];
     for (let i = 0; i < array.length; i += 4) {
@@ -23,7 +31,11 @@ const Allannouncements = ({ items }) => {
   const announcements = splitIntoFours(items);
 
   return (
-    <div className="flex flex-col gap-4 rounded-[10px] bg-white px-8 py-6">
+    <div
+      className={` ${
+        editMode ? " pointer-events-none blur-sm filter" : ""
+      } flex flex-col gap-4 rounded-[10px] bg-white py-6 px-8`}
+    >
       <div className="flex justify-between">
         <p className="mb-3 text-lg font-semibold text-nightblue">
           Announcements
@@ -34,13 +46,19 @@ const Allannouncements = ({ items }) => {
         {announcements.map((group) => {
           return (
             <SwiperSlide>
-              <div className="grid grid-cols-2 grid-rows-2 gap-4 ">
+              <div className="grid grid-cols-2 grid-rows-2 gap-4">
                 {group.map((Element, index) => {
                   return (
                     <Announcementelement
-                      key={index}
-                      onClick={() => setActiveCardIndex(index)}
-                      isActive={activeCardIndex === index}
+                      isDisplayed={false}
+                      onClick={() => {
+                        setActiveCardIndex(index);
+                        setBarContent(Element);
+                        setContentToEdit(Element);
+                      }}
+                      isActive={
+                        activeCardIndex === index && barContent !== null
+                      }
                       profilepicture={Element.profilepicture}
                       person={Element.person}
                       content={Element.content}

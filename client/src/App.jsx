@@ -6,6 +6,7 @@ import Main from "./landing page/Main";
 import Teacherhome from "./teacher/Teacherhome";
 import SigninPage from "./signin page/Main";
 import Teacherannounce from "./teacher/Teacherannounce";
+import Teacherstudents from "./teacher/Teacherstudents";
 
 
 const App = () => {
