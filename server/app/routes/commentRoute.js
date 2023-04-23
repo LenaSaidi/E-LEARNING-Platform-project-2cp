@@ -1,6 +1,6 @@
-const { Router } = require('express');
-const commentController = require('../controllers/commentController');
-const router = Router();
+// const { Router } = require('express');
+// const commentController = require('../controllers/commentController');
+// const router = Router();
 
 
-module.exports = router;
+// module.exports = router;

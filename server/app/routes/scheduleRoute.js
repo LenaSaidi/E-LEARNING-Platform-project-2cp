@@ -1,6 +1,6 @@
-const { Router } = require('express');
-const scheduleController = require('../controllers/scheduleController');
+// const { Router } = require('express');
+// const scheduleController = require('../controllers/scheduleController');
 
-const router = Router();
+// const router = Router();
 
-module.exports = router;
+// module.exports = router;
