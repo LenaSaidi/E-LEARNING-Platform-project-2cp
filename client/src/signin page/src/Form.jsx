@@ -37,10 +37,21 @@ const Form = ({ setToken, setUser }) => {
       // store token and user in local storage or state
       return { token, user };
     } catch (error) {
-      setErrors((prev) => {
+      /* setErrors((prev) => {
+        return { ...prev, password: "incorrect password" };
+      }); */
+      if (error.response.data.errors.email === 'That email is not registered') {
+        console.log('hey')
+        setErrors((prev) => {
+          return { ...prev, email: "That email is not registered" };
+        });
+      } else if (error.response.data.errors.password === 'That password is incorrect') {
+        setErrors((prev) => {
         return { ...prev, password: "incorrect password" };
       });
-      console.log(error.response);
+      }
+      
+      console.log(error.response.data.errors.email);
       return { error: error.response.data };
     }
   };
@@ -84,6 +95,17 @@ const Form = ({ setToken, setUser }) => {
       console.log("Login success:", user, token);
       // redirect to dashboard or some other page
     }
+    if (error.email === 'incorrect email') {
+      console.log('hey')
+      setErrors((prev) => {
+        return { ...prev, email: "That email is not registered" };
+      });
+    } else if (error.password === 'incorrect password') {
+      setErrors((prev) => {
+      return { ...prev, password: "incorrect password" };
+    });
+    }
+   
   };
 
   // check front validation
