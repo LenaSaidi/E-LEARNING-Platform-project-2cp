@@ -53,10 +53,7 @@ app.set('io', io);
 app.use(cors());
 app.use(cookieParser());
 
-
- // "type": "module",
- const dbURI = 'mongodb+srv://elite:elite@elite.2mfo0dl.mongodb.net/?retryWrites=true&w=majority';
-
+const dbURI = process.env.MONGODB_URI;
 
 
 app.get("/", (req, res) => {
